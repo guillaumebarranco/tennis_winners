@@ -1,0 +1,24 @@
+li {
+  margin-top: 5px;
+  display: flex;
+}
+
+span {
+  display: block;
+}
+
+.player-name {
+  width: 120px;
+}
+
+.count {
+  margin-left: 10px;
+  background-color: blue;
+  color: white;
+  text-align: center;
+  transition: 0.4s;
+
+  &.last {
+    background-color: red;
+  }
+}

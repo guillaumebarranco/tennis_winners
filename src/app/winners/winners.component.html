@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let winner of winners">
+    <span class="player-name">{{ winner.name }} </span>
+    <span
+      class="count"
+      [ngStyle]="{ 'width.px': winner.count * 20 }"
+      [ngClass]="{ last: winner.last === true }"
+      >{{ winner.count }}</span
+    >
+  </li>
+</ul>
