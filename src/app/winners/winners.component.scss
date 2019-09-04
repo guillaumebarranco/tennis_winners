@@ -1,6 +1,7 @@
 li {
   margin-top: 5px;
   display: flex;
+  font-family: 'Roboto', sans-serif;
 }
 
 span {
@@ -8,17 +9,18 @@ span {
 }
 
 .player-name {
-  width: 140px;
+  width: 155px;
 }
 
 .count {
   margin-left: 10px;
-  background-color: blue;
+  padding: 3px 0;
+  background-color: #00aff0;
   color: white;
   text-align: center;
   transition: width 0.4s;
 
   &.last {
-    background-color: red;
+    background-color: #002865;
   }
 }

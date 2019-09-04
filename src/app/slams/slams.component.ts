@@ -47,30 +47,32 @@ export class SlamsComponent implements OnInit {
       .map(winner => winner.name)
       .find(winner => winner === openWinners[index]);
 
-    if (currentWinnerFound) {
-      this._currentWinners[open] = this._currentWinners[open].map(winner =>
-        winner.name !== openWinners[index]
-          ? {
-              ...winner,
-              last: false,
-            }
-          : {
-              ...winner,
-              count: winner.count + 1,
-              last: true,
-            }
-      );
-    } else {
-      this._currentWinners[open] = this._currentWinners[open].map(winner => ({
-        ...winner,
-        last: false,
-      }));
+    if (openWinners[index]) {
+      if (currentWinnerFound) {
+        this._currentWinners[open] = this._currentWinners[open].map(winner =>
+          winner.name !== openWinners[index]
+            ? {
+                ...winner,
+                last: false,
+              }
+            : {
+                ...winner,
+                count: winner.count + 1,
+                last: true,
+              }
+        );
+      } else {
+        this._currentWinners[open] = this._currentWinners[open].map(winner => ({
+          ...winner,
+          last: false,
+        }));
 
-      this._currentWinners[open] = this._currentWinners[open].concat({
-        count: 1,
-        last: true,
-        name: openWinners[index],
-      });
+        this._currentWinners[open] = this._currentWinners[open].concat({
+          count: 1,
+          last: true,
+          name: openWinners[index],
+        });
+      }
     }
 
     if (yearsSinceOpenEra[index + 1]) {
