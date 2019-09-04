@@ -8,7 +8,7 @@ span {
 }
 
 .player-name {
-  width: 120px;
+  width: 140px;
 }
 
 .count {
@@ -16,7 +16,7 @@ span {
   background-color: blue;
   color: white;
   text-align: center;
-  transition: 0.4s;
+  transition: width 0.4s;
 
   &.last {
     background-color: red;
