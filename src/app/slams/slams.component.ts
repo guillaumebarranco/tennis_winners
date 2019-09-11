@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 import { australianOpenWinners } from 'app/data/slams/australian_open';
@@ -8,12 +9,20 @@ import { yearsSinceOpenEra } from 'app/data/slams/years';
 import { Winner } from 'app/models/winner';
 
 @Component({
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: '0' }),
+        animate('.5s ease-out', style({ opacity: '1' })),
+      ]),
+    ]),
+  ],
   selector: 'app-slams',
   templateUrl: './slams.component.html',
 })
 export class SlamsComponent implements OnInit {
   public readonly MAX_WINNERS = 10;
-  public readonly TIMEOUT = 100;
+  public readonly TIMEOUT = 500;
   public _currentWinners: {
     ao: Winner[];
     rg: Winner[];
