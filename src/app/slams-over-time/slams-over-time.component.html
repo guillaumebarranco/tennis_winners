@@ -1,0 +1,30 @@
+<h1>Vainqueurs Tournois du Grand Chelemn</h1>
+
+<h2>A partir de 1969</h2>
+
+<h2>{{ _currentYear }}</h2>
+
+<details open="true">
+  <summary>Global</summary>
+  <app-winners [winners]="_currentWinnersGlobal"></app-winners>
+</details>
+
+<details open="true">
+  <summary>Open d'Australie</summary>
+  <app-winners [winners]="_currentWinnersAO"></app-winners>
+</details>
+
+<details open="true">
+  <summary>Roland Garros</summary>
+  <app-winners [winners]="_currentWinnersRG"></app-winners>
+</details>
+
+<details open="true">
+  <summary>Wimbledon</summary>
+  <app-winners [winners]="_currentWinnersWB"></app-winners>
+</details>
+
+<details open="true">
+  <summary>US Open</summary>
+  <app-winners [winners]="_currentWinnersUS"></app-winners>
+</details>

@@ -1,0 +1,26 @@
+<h3>{{tournamentsMixName()}}</h3>
+
+<table>
+  <thead>
+    <th>Année</th>
+
+    @for(tournamentsMixLabel of tournamentsMixLabels(); track $index) {
+      <th>{{tournamentsMixLabel}}</th>
+    }
+  </thead>
+
+  <tbody>
+    @for(tournamentsByYear of tournamentsByYears(); track tournamentsByYear.year) {
+      @if(!onlyFrom2000 || (onlyFrom2000 && tournamentsByYear.year >= 2000)) {
+        <tr>
+          <td>{{tournamentsByYear.year}}</td>
+
+          @for(final of tournamentsByYear.finals; track $index) {
+            <td class="winner" [style.background-color]="getCaseBackgroundColor(final.winner)" [style.color]="getCaseColor(final.winner)">{{final.winner}}</td>
+          }
+        </tr>
+      }
+    }
+  </tbody>
+</table>
+

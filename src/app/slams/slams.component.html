@@ -1,30 +1,18 @@
-<h1>Vainqueurs Tournois du Grand Chelemn</h1>
-
-<h2>A partir de 1969</h2>
-
-<h2>{{ _currentYear }}</h2>
-
 <details open="true">
-  <summary>Global</summary>
-  <app-winners [winners]="_currentWinnersGlobal"></app-winners>
+  <summary>Mix Grand Chelem</summary>
+  <div class="slams">
+    <app-tournaments-mix tournamentsMixName="Mix Grand Chelem" [tournamentsMixKeys]="getGrandsSlamsMixKeys()" [tournamentsMixLabels]="getGrandsSlamsMixLabels()" [tournamentsMixFinals]="getGrandsSlamsMixTournaments()"></app-tournaments-mix>
+  </div>
 </details>
 
 <details open="true">
-  <summary>Open d'Australie</summary>
-  <app-winners [winners]="_currentWinnersAO"></app-winners>
+  <summary>Finales de Grand Chelem</summary>
+  <div class="slams">
+    <app-tournament tournamentName="Open d'Australie" [tournamentFinals]="australianOpenFinals"></app-tournament>
+    <app-tournament tournamentName="Roland Garros" [tournamentFinals]="rolandGarrosFinals"></app-tournament>
+    <app-tournament tournamentName="Wimbledon" [tournamentFinals]="wimbledonFinals"></app-tournament>
+    <app-tournament tournamentName="US Open" [tournamentFinals]="usOpenFinals"></app-tournament>
+  </div>
 </details>
 
-<details open="true">
-  <summary>Roland Garros</summary>
-  <app-winners [winners]="_currentWinnersRG"></app-winners>
-</details>
 
-<details open="true">
-  <summary>Wimbledon</summary>
-  <app-winners [winners]="_currentWinnersWB"></app-winners>
-</details>
-
-<details open="true">
-  <summary>US Open</summary>
-  <app-winners [winners]="_currentWinnersUS"></app-winners>
-</details>
