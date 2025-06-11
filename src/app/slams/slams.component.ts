@@ -1,24 +1,25 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+// import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-
-import { australianOpenWinners } from 'app/data/slams/australian_open';
-import { rolandGarrosWinners } from 'app/data/slams/roland_garros';
-import { usOpenWinners } from 'app/data/slams/us_open';
-import { wimbledonWinners } from 'app/data/slams/wimbledon';
-import { yearsSinceOpenEra } from 'app/data/slams/years';
-import { Winner } from 'app/models/winner';
+import { australianOpenWinners } from '../data/slams/australian_open';
+import { rolandGarrosWinners } from '../data/slams/roland_garros';
+import { usOpenWinners } from '../data/slams/us_open';
+import { wimbledonWinners } from '../data/slams/wimbledon';
+import { yearsSinceOpenEra } from '../data/slams/years';
+import { Winner } from '../models/winner';
+import { WinnersComponent } from '../winners/winners.component';
 
 @Component({
-  animations: [
-    trigger('fadeIn', [
-      transition(':enter', [
-        style({ opacity: '0' }),
-        animate('.5s ease-out', style({ opacity: '1' })),
-      ]),
-    ]),
-  ],
+  // animations: [
+  //   trigger('fadeIn', [
+  //     transition(':enter', [
+  //       style({ opacity: '0' }),
+  //       animate('.5s ease-out', style({ opacity: '1' })),
+  //     ]),
+  //   ]),
+  // ],
   selector: 'app-slams',
   templateUrl: './slams.component.html',
+  imports: [WinnersComponent]
 })
 export class SlamsComponent implements OnInit {
   public readonly MAX_WINNERS = 10;
@@ -28,16 +29,15 @@ export class SlamsComponent implements OnInit {
     rg: Winner[];
     us: Winner[];
     wb: Winner[];
-  };
-  public _currentYear: number;
-
-  public ngOnInit(): void {
-    this._currentWinners = {
+  } = {
       ao: [],
       rg: [],
       us: [],
       wb: [],
     };
+  public _currentYear: number = 2000;
+
+  public ngOnInit(): void {
 
     this.calculTournamentWinners(australianOpenWinners, 'ao');
     this.calculTournamentWinners(rolandGarrosWinners, 'rg');
@@ -47,7 +47,7 @@ export class SlamsComponent implements OnInit {
 
   public calculTournamentWinners(
     openWinners: string[],
-    open: string,
+    open: 'ao' | 'rg' | 'us' | 'wb',
     index = 0
   ) {
     this._currentYear = yearsSinceOpenEra[index];
@@ -91,7 +91,7 @@ export class SlamsComponent implements OnInit {
     }
   }
 
-  public _getCurrentWinners(open: string): Winner[] {
+  public _getCurrentWinners(open: 'ao' | 'rg' | 'us' | 'wb',): Winner[] {
     return this._currentWinners[open]
       .filter(a => !!a)
       .sort((a, b) => (a.count < b.count ? 1 : -1))

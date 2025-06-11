@@ -1,11 +1,13 @@
 <ul>
-  <li *ngFor="let winner of winners">
-    <span class="player-name">{{ winner.name }} </span>
+  @for(winner of winners(); track $index) {
+    <li>
+      <span class="player-name">{{ winner.name }} </span>
     <span
       class="count"
-      [ngStyle]="{ 'width.px': winner.count * 45 }"
-      [ngClass]="{ last: winner.last === true }"
+      [style.width.px]="winner.count * 45"
+      [class.last]="winner.last === true"
       >{{ winner.count }}</span
     >
-  </li>
+    </li>
+  }
 </ul>

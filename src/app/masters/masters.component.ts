@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
-import { cincinnatiWinners } from 'app/data/masters/cincinnati';
-import { indianWellsWinners } from 'app/data/masters/indian_wells';
-import { madridWinners } from 'app/data/masters/madrid';
-import { miamiWinners } from 'app/data/masters/miami';
-import { monteCarloWinners } from 'app/data/masters/monte_carlo';
-import { montrealWinners } from 'app/data/masters/montreal';
-import { parisWinners } from 'app/data/masters/paris';
-import { romeWinners } from 'app/data/masters/rome';
-import { shangaiWinners } from 'app/data/masters/shangai';
-import { mastersYears } from 'app/data/masters/years';
-import { yearsSinceOpenEra } from 'app/data/slams/years';
-import { Winner } from 'app/models/winner';
+
+import { WinnersComponent } from '../winners/winners.component';
+import { cincinnatiWinners } from '../data/masters/cincinnati';
+import { indianWellsWinners } from '../data/masters/indian_wells';
+import { madridWinners } from '../data/masters/madrid';
+import { miamiWinners } from '../data/masters/miami';
+import { monteCarloWinners } from '../data/masters/monte_carlo';
+import { montrealWinners } from '../data/masters/montreal';
+import { parisWinners } from '../data/masters/paris';
+import { romeWinners } from '../data/masters/rome';
+import { shangaiWinners } from '../data/masters/shangai';
+import { mastersYears } from '../data/masters/years';
+import { yearsSinceOpenEra } from '../data/slams/years';
+import { Winner } from '../models/winner';
 
 @Component({
   selector: 'app-masters',
   templateUrl: './masters.component.html',
+  imports: [WinnersComponent]
 })
 export class MastersComponent implements OnInit {
   public readonly MAX_WINNERS = 10;
@@ -30,11 +33,7 @@ export class MastersComponent implements OnInit {
     ci: Winner[];
     sh: Winner[];
     pa: Winner[];
-  };
-  public _currentYear: number;
-
-  public ngOnInit(): void {
-    this._currentWinners = {
+  } = {
       in: [],
       mi: [],
       mc: [],
@@ -45,6 +44,10 @@ export class MastersComponent implements OnInit {
       sh: [],
       pa: [],
     };
+
+  public _currentYear: number = 2000;
+
+  public ngOnInit(): void {
 
     this.calculTournamentWinners(indianWellsWinners, 'in');
     this.calculTournamentWinners(miamiWinners, 'mi');
@@ -58,20 +61,20 @@ export class MastersComponent implements OnInit {
   }
 
   public calculTournamentWinners(
-    openWinners: string[],
-    open: string,
+    masterWinners: string[],
+    master: 'in' | 'mi' | 'mc' | 'ma' | 'ro' | 'mo' | 'ci' | 'sh' |'pa' ,
     index = 0
   ) {
     this._currentYear = mastersYears[index];
 
-    const currentWinnerFound = this._currentWinners[open]
+    const currentWinnerFound = this._currentWinners[master]
       .map(winner => winner.name)
-      .find(winner => winner === openWinners[index]);
+      .find(winner => winner === masterWinners[index]);
 
-    if (openWinners[index]) {
+    if (masterWinners[index]) {
       if (currentWinnerFound) {
-        this._currentWinners[open] = this._currentWinners[open].map(winner =>
-          winner.name !== openWinners[index]
+        this._currentWinners[master] = this._currentWinners[master].map(winner =>
+          winner.name !== masterWinners[index]
             ? {
                 ...winner,
                 last: false,
@@ -83,29 +86,29 @@ export class MastersComponent implements OnInit {
               }
         );
       } else {
-        this._currentWinners[open] = this._currentWinners[open].map(winner => ({
+        this._currentWinners[master] = this._currentWinners[master].map(winner => ({
           ...winner,
           last: false,
         }));
 
-        this._currentWinners[open] = this._currentWinners[open].concat({
+        this._currentWinners[master] = this._currentWinners[master].concat({
           count: 1,
           last: true,
-          name: openWinners[index],
+          name: masterWinners[index],
         });
       }
     }
 
     if (yearsSinceOpenEra[index + 1]) {
       setTimeout(() => {
-        this.calculTournamentWinners(openWinners, open, index + 1);
+        this.calculTournamentWinners(masterWinners, master, index + 1);
       }, this.TIMEOUT);
     }
   }
 
-  public _getCurrentWinners(open: string): Winner[] {
-    return this._currentWinners[open]
-      .filter(a => a !== '')
+  public _getCurrentWinners(master: 'in' | 'mi' | 'mc' | 'ma' | 'ro' | 'mo' | 'ci' | 'sh' |'pa'): Winner[] {
+    return this._currentWinners[master]
+      .filter(a => !!a)
       .sort((a, b) => (a.count < b.count ? 1 : -1))
       .slice(0, this.MAX_WINNERS);
   }

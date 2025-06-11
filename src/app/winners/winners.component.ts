@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
-import { Winner } from 'app/models/winner';
+import { Winner } from '../models/winner';
 
 @Component({
   selector: 'app-winners',
@@ -8,5 +8,5 @@ import { Winner } from 'app/models/winner';
   templateUrl: './winners.component.html',
 })
 export class WinnersComponent {
-  @Input() public winners: Winner[];
+  public winners = input.required<Winner[]>();
 }
