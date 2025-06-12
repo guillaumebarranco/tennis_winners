@@ -9,7 +9,7 @@
 
   <tbody>
     @for(tournamentFinal of tournamentFinals(); track $index) {
-      @if(!onlyFrom2000 || (onlyFrom2000 && tournamentFinal.year >= 2000)) {
+      @if(!onlyFrom2000() || (onlyFrom2000() && tournamentFinal.year >= 2000)) {
         <tr>
           <td>{{tournamentFinal.year}}</td>
           <td class="winner" [style.background-color]="getCaseBackgroundColor(tournamentFinal.winner)" [style.color]="getCaseColor(tournamentFinal.winner)">{{tournamentFinal.winner}}</td>

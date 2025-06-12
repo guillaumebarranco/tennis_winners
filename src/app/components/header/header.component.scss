@@ -1,0 +1,17 @@
+ul {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  li {
+    cursor: pointer;
+    list-style: none;
+    border: solid 1px black;
+    padding: 8px;
+
+    &.active-link, &:hover {
+      background-color: aqua;
+    }
+  }
+}

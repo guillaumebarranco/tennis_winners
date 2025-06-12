@@ -1,25 +1,25 @@
 import { Component } from '@angular/core';
-import { TournamentComponent } from '../tournament/tournament.component';
+import { TournamentComponent } from '../../components/tournament/tournament.component';
 
-import { cincinnatiWinners } from '../data/masters/cincinnati';
-import { indianWellsWinners } from '../data/masters/indian_wells';
-import { madridWinners } from '../data/masters/madrid';
-import { miamiWinners } from '../data/masters/miami';
-import { monteCarloWinners } from '../data/masters/monte_carlo';
-import { montrealWinners } from '../data/masters/montreal';
-import { parisWinners } from '../data/masters/paris';
-import { romeWinners } from '../data/masters/rome';
-import { shangaiWinners } from '../data/masters/shangai';
-import { mastersYears } from '../data/masters/years';
+import { cincinnatiWinners } from '../../data/masters/cincinnati';
+import { indianWellsWinners } from '../../data/masters/indian_wells';
+import { madridWinners } from '../../data/masters/madrid';
+import { miamiWinners } from '../../data/masters/miami';
+import { monteCarloWinners } from '../../data/masters/monte_carlo';
+import { montrealWinners } from '../../data/masters/montreal';
+import { parisWinners } from '../../data/masters/paris';
+import { romeWinners } from '../../data/masters/rome';
+import { shangaiWinners } from '../../data/masters/shangai';
 
-import { TournamentFinal } from '../models/slam-final';
-import { TournamentsMixComponent } from '../tournaments-mix/tournaments-mix.component';
+import { TournamentFinal } from '../../models/slam-final';
+import { TournamentsMixComponent } from '../../components/tournaments-mix/tournaments-mix.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-masters',
   styleUrls: ['./masters.component.scss'],
   templateUrl: './masters.component.html',
-  imports: [TournamentComponent, TournamentsMixComponent]
+  imports: [TournamentComponent, TournamentsMixComponent, HeaderComponent]
 })
 export class MastersComponent {
   public cincinnatiFinals: TournamentFinal[] = cincinnatiWinners;
@@ -31,6 +31,8 @@ export class MastersComponent {
   public parisFinals: TournamentFinal[] = parisWinners;
   public romeFinals: TournamentFinal[] = romeWinners;
   public shangaiFinals: TournamentFinal[] = shangaiWinners; 
+
+  public onlyFrom2000 = true;  
 
   public getGrandsSlamsMixTournaments() {
     return {

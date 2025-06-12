@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<div>
+  <label>Afficher uniquement post 2000</label>
+  <input type="checkbox" [checked]="onlyFrom2000" (change)="onlyFrom2000 = !onlyFrom2000"/>
+</div>
+
+<details open="true">
+  <summary>Mix Masters 1000</summary>
+  <div class="slams">
+    <app-tournaments-mix [onlyFrom2000]="onlyFrom2000" tournamentsMixName="Mix Masters 1000" [tournamentsMixKeys]="getGrandsSlamsMixKeys()" [tournamentsMixLabels]="getGrandsSlamsMixLabels()" [tournamentsMixFinals]="getGrandsSlamsMixTournaments()"></app-tournaments-mix>
+  </div>
+</details>
+
+<details open="true">
+  <summary>Finales de Masters 1000</summary>
+  <div class="slams">
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Indian Wells" [tournamentFinals]="indianWellsFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Miami" [tournamentFinals]="miamiFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Monte-Carlo" [tournamentFinals]="monteCarloFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Madrid" [tournamentFinals]="madridFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Rome" [tournamentFinals]="romeFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Montréal" [tournamentFinals]="montrealFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Cincinnati" [tournamentFinals]="cincinnatiFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Shangai" [tournamentFinals]="shangaiFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Paris" [tournamentFinals]="parisFinals"></app-tournament>
+  </div>
+</details>

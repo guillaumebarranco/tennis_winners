@@ -1,6 +1,6 @@
 import { Component, computed, input } from '@angular/core';
-import { TournamentFinal } from '../models/slam-final';
-import { yearsSinceOpenEra } from '../data/slams/years';
+import { yearsSinceOpenEra } from '../../data/slams/years';
+import { TournamentFinal } from '../../models/slam-final';
 
 
 @Component({
@@ -13,7 +13,7 @@ export class TournamentsMixComponent {
   public tournamentsMixFinals = input.required<{[key: string]: TournamentFinal[]}>();
   public tournamentsMixKeys = input.required<string[]>();
   public tournamentsMixLabels = input.required<string[]>();
-  public onlyFrom2000 = true;
+  public onlyFrom2000 = input<boolean>(true);
   public years = yearsSinceOpenEra;
 
   public tournamentsByYears = computed(() => {
@@ -46,6 +46,20 @@ export class TournamentsMixComponent {
       return 'red';
     } else if(character.includes('Murray')) {
       return 'deepskyblue';
+    } else if(character.includes('Björn')) {
+      return 'yellow';
+    } else if(character.includes('Sampras')) {
+      return 'cadetblue';
+    } else if(character.includes('Agassi')) {
+      return 'mediumpurple';
+    } else if(character.includes('Lendl')) {
+      return 'lightskyblue';
+    } else if(character.includes('Connors')) {
+      return 'antiquewhite';
+    } else if(character.includes('McEnroe')) {
+      return 'lightgray';
+    }  else if(character.includes('Wilander')) {
+      return 'pink';
     } else {
       return 'transparent';
     }

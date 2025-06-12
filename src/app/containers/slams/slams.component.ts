@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import { TournamentComponent } from '../tournament/tournament.component';
-import { australianOpenWinners } from '../data/slams/australian_open';
-import { rolandGarrosWinners } from '../data/slams/roland_garros';
-import { wimbledonWinners } from '../data/slams/wimbledon';
-import { usOpenWinners } from '../data/slams/us_open';
-import { TournamentFinal } from '../models/slam-final';
-import { TournamentsMixComponent } from '../tournaments-mix/tournaments-mix.component';
+import { TournamentComponent } from '../../components/tournament/tournament.component';
+import { australianOpenWinners } from '../../data/slams/australian_open';
+import { rolandGarrosWinners } from '../../data/slams/roland_garros';
+import { wimbledonWinners } from '../../data/slams/wimbledon';
+import { usOpenWinners } from '../../data/slams/us_open';
+import { TournamentFinal } from '../../models/slam-final';
+import { TournamentsMixComponent } from '../../components/tournaments-mix/tournaments-mix.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-slams',
   styleUrls: ['./slams.component.scss'],
   templateUrl: './slams.component.html',
-  imports: [TournamentComponent, TournamentsMixComponent]
+  imports: [TournamentComponent, TournamentsMixComponent, HeaderComponent]
 })
 export class SlamsComponent {
   public australianOpenFinals: TournamentFinal[] = australianOpenWinners;
   public rolandGarrosFinals: TournamentFinal[] = rolandGarrosWinners;
   public wimbledonFinals: TournamentFinal[] = wimbledonWinners;
   public usOpenFinals: TournamentFinal[] = usOpenWinners;
-  
+
+  public onlyFrom2000 = true;  
 
   public getGrandsSlamsMixTournaments() {
     return {

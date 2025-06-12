@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { SlamsOverTimeComponent } from './slams-over-time/slams-over-time.component';
-import { MastersOverTimeComponent } from './masters-over-time/masters-over-time.component';
-import { SlamsComponent } from './slams/slams.component';
-import { MastersComponent } from './masters/masters.component';
+import { SlamsOverTimeComponent } from './containers/slams-over-time/slams-over-time.component';
+import { MastersOverTimeComponent } from './containers/masters-over-time/masters-over-time.component';
+import { SlamsComponent } from './containers/slams/slams.component';
+import { MastersComponent } from './containers/masters/masters.component';
 
 export const routes: Routes = [
     {

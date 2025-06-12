@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { Winner } from '../models/winner';
+import { Winner } from '../../models/winner';
 
 @Component({
   selector: 'app-winners',

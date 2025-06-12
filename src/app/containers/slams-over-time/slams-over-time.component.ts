@@ -1,14 +1,13 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { australianOpenWinners } from '../data/slams/australian_open';
-import { rolandGarrosWinners } from '../data/slams/roland_garros';
-import { usOpenWinners } from '../data/slams/us_open';
-import { wimbledonWinners } from '../data/slams/wimbledon';
-import { yearsSinceOpenEra } from '../data/slams/years';
-import { Winner } from '../models/winner';
-import { WinnersComponent } from '../winners/winners.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { australianOpenWinners } from '../../data/slams/australian_open';
+import { rolandGarrosWinners } from '../../data/slams/roland_garros';
+import { usOpenWinners } from '../../data/slams/us_open';
+import { wimbledonWinners } from '../../data/slams/wimbledon';
+import { yearsSinceOpenEra } from '../../data/slams/years';
+import { Winner } from '../../models/winner';
+import { WinnersComponent } from '../../components/winners/winners.component';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   animations: [
@@ -21,11 +20,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   selector: 'app-slams-over-time',
   templateUrl: './slams-over-time.component.html',
-  imports: [WinnersComponent, BrowserModule, BrowserAnimationsModule]
+  imports: [WinnersComponent, HeaderComponent]
 })
 export class SlamsOverTimeComponent implements OnInit {
   public readonly MAX_WINNERS = 10;
-  public readonly TIMEOUT = 50;
+  public readonly TIMEOUT = 200;
   public _currentWinners: {
     ao: Winner[];
     rg: Winner[];

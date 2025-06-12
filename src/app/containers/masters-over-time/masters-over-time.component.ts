@@ -1,28 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 
 
-import { WinnersComponent } from '../winners/winners.component';
-import { cincinnatiWinners } from '../data/masters/cincinnati';
-import { indianWellsWinners } from '../data/masters/indian_wells';
-import { madridWinners } from '../data/masters/madrid';
-import { miamiWinners } from '../data/masters/miami';
-import { monteCarloWinners } from '../data/masters/monte_carlo';
-import { montrealWinners } from '../data/masters/montreal';
-import { parisWinners } from '../data/masters/paris';
-import { romeWinners } from '../data/masters/rome';
-import { shangaiWinners } from '../data/masters/shangai';
-import { mastersYears } from '../data/masters/years';
-import { yearsSinceOpenEra } from '../data/slams/years';
-import { Winner } from '../models/winner';
+import { WinnersComponent } from '../../components/winners/winners.component';
+import { cincinnatiWinners } from '../../data/masters/cincinnati';
+import { indianWellsWinners } from '../../data/masters/indian_wells';
+import { madridWinners } from '../../data/masters/madrid';
+import { miamiWinners } from '../../data/masters/miami';
+import { monteCarloWinners } from '../../data/masters/monte_carlo';
+import { montrealWinners } from '../../data/masters/montreal';
+import { parisWinners } from '../../data/masters/paris';
+import { romeWinners } from '../../data/masters/rome';
+import { shangaiWinners } from '../../data/masters/shangai';
+import { mastersYears } from '../../data/masters/years';
+import { yearsSinceOpenEra } from '../../data/slams/years';
+import { Winner } from '../../models/winner';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: '0' }),
+        animate('.5s ease-out', style({ opacity: '1' })),
+      ]),
+    ]),
+  ],
   selector: 'app-masters-over-time',
   templateUrl: './masters-over-time.component.html',
-  imports: [WinnersComponent]
+  imports: [WinnersComponent, HeaderComponent]
 })
 export class MastersOverTimeComponent implements OnInit {
   public readonly MAX_WINNERS = 10;
-  public readonly TIMEOUT = 100;
+  public readonly TIMEOUT = 200;
   public _currentWinners: {
     in: Winner[];
     mi: Winner[];

@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div>
+  <label>Afficher uniquement post 2000</label>
+  <input type="checkbox" [checked]="onlyFrom2000" (change)="onlyFrom2000 = !onlyFrom2000"/>
+</div>
+
+<details open="true">
+  <summary>Mix Grand Chelem</summary>
+  <div class="slams">
+    <app-tournaments-mix [onlyFrom2000]="onlyFrom2000" tournamentsMixName="Mix Grand Chelem" [tournamentsMixKeys]="getGrandsSlamsMixKeys()" [tournamentsMixLabels]="getGrandsSlamsMixLabels()" [tournamentsMixFinals]="getGrandsSlamsMixTournaments()"></app-tournaments-mix>
+  </div>
+</details>
+
+<details open="true">
+  <summary>Finales de Grand Chelem</summary>
+  <div class="slams">
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Open d'Australie" [tournamentFinals]="australianOpenFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Roland Garros" [tournamentFinals]="rolandGarrosFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Wimbledon" [tournamentFinals]="wimbledonFinals"></app-tournament>
+    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="US Open" [tournamentFinals]="usOpenFinals"></app-tournament>
+  </div>
+</details>
+
+
