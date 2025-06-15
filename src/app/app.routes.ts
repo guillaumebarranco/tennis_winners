@@ -3,6 +3,7 @@ import { SlamsOverTimeComponent } from './containers/slams-over-time/slams-over-
 import { MastersOverTimeComponent } from './containers/masters-over-time/masters-over-time.component';
 import { SlamsComponent } from './containers/slams/slams.component';
 import { MastersComponent } from './containers/masters/masters.component';
+import { GrandSlamStatsComponent } from './containers/grand-slam-stats/grand-slam-stats.component';
 
 export const routes: Routes = [
     {
@@ -25,4 +26,5 @@ export const routes: Routes = [
     component: SlamsComponent,
     path: '',
   },
+  { path: 'percentage-grand-slams-win', component: GrandSlamStatsComponent }
 ];

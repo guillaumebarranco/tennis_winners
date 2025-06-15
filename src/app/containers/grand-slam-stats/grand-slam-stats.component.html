@@ -1,0 +1,22 @@
+<app-header></app-header>
+<h3>Ratio de victoires en finale de Grand Chelem (minimum 10 finales)</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Joueur</th>
+      <th>Victoires</th>
+      <th>Finales</th>
+      <th>Ratio (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(player of topPlayers; track player.name) {
+      <tr>
+        <td>{{player.name}}</td>
+        <td>{{player.wins}}</td>
+        <td>{{player.finals}}</td>
+        <td>{{player.ratio | number:'1.0-1'}}%</td>
+      </tr>
+    }
+  </tbody>
+</table> 

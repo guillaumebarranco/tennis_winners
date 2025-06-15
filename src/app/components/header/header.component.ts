@@ -5,10 +5,10 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   selector: 'app-header',
   styleUrls: ['./header.component.scss'],
   templateUrl: './header.component.html',
+  standalone: true,
   imports: [RouterModule]
 })
 export class HeaderComponent {
-
   public activeRoute = inject(ActivatedRoute);
   
   public isActive(currentRoute: string) : boolean {
