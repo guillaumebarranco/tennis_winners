@@ -5,6 +5,7 @@
     <th>Année</th>
     <th>Vainqueur</th>
     <th>Finaliste</th>
+    <th>Score</th>
   </thead>
 
   <tbody>
@@ -12,8 +13,9 @@
       @if(!onlyFrom2000() || (onlyFrom2000() && tournamentFinal.year >= 2000)) {
         <tr>
           <td>{{tournamentFinal.year}}</td>
-          <td class="winner" [style.background-color]="getCaseBackgroundColor(tournamentFinal.winner)" [style.color]="getCaseColor(tournamentFinal.winner)">{{tournamentFinal.winner}}</td>
-          <td [style.background-color]="getCaseBackgroundColor(tournamentFinal.finalist)" [style.color]="getCaseColor(tournamentFinal.finalist)">{{tournamentFinal.finalist}}</td>
+          <td class="winner" [style.background-color]="getPlayerBackgroundColor(tournamentFinal.winner)">{{tournamentFinal.winner}}</td>
+          <td [style.background-color]="getPlayerBackgroundColor(tournamentFinal.finalist)">{{tournamentFinal.finalist}}</td>
+          <td [style.background-color]="getPlayerBackgroundColor(tournamentFinal.winner, true, tournamentFinal.score)">{{tournamentFinal.score.join(' ')}}</td>
         </tr>
       }
     }

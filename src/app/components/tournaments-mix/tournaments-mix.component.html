@@ -16,7 +16,7 @@
           <td>{{tournamentsByYear.year}}</td>
 
           @for(final of tournamentsByYear.finals; track $index) {
-            <td class="winner" [style.background-color]="getCaseBackgroundColor(final.winner)" [style.color]="getCaseColor(final.winner)">{{final.winner}}</td>
+            <td class="winner" [style.background-color]="getPlayerBackgroundColor(final.winner)">{{final.winner}}</td>
           }
         </tr>
       }

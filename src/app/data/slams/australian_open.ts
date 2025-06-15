@@ -17,7 +17,7 @@ export const australianOpenWinners = [
   {year: 1983, winner: 'Mats Wilander', finalist: 'Ivan Lendl', score: ['6-1', '6-4', '6-4']},
   {year: 1984, winner: 'Mats Wilander', finalist: 'Kevin Curren', score: ['6-7', '6-4', '7-6', '6-2']},
   {year: 1985, winner: 'Stefan Edberg', finalist: 'Mats Wilander', score: ['6-4', '6-3', '6-3']},
-  {year: 1986, winner: 'No final', finalist: 'No final', score: ['', '', '']},
+  {year: 1986, winner: '', finalist: '', score: ['', '', '']},
   {year: 1987, winner: 'Stefan Edberg', finalist: 'Pat Cash', score: ['6-3', '6-4', '3-6', '5-7', '6-3']},
   {year: 1988, winner: 'Mats Wilander', finalist: 'Pat Cash', score: ['6-3', '6-7', '3-6', '6-1', '8-6']},
   {year: 1989, winner: 'Ivan Lendl', finalist: 'Miloslav Mečíř', score: ['6-2', '6-2', '6-2']},
