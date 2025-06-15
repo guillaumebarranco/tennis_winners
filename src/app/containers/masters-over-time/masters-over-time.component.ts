@@ -11,8 +11,7 @@ import { montrealWinners } from '../../data/masters/montreal';
 import { parisWinners } from '../../data/masters/paris';
 import { romeWinners } from '../../data/masters/rome';
 import { shangaiWinners } from '../../data/masters/shangai';
-import { mastersYears } from '../../data/masters/years';
-import { yearsSinceOpenEra } from '../../data/slams/years';
+import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -75,7 +74,7 @@ export class MastersOverTimeComponent implements OnInit {
     master: 'in' | 'mi' | 'mc' | 'ma' | 'ro' | 'mo' | 'ci' | 'sh' |'pa' ,
     index = 0
   ) {
-    this._currentYear = mastersYears[index];
+    this._currentYear = tennisYears[index];
 
     const currentWinnerFound = this._currentWinners[master]
       .map(winner => winner.name)
@@ -109,7 +108,7 @@ export class MastersOverTimeComponent implements OnInit {
       }
     }
 
-    if (yearsSinceOpenEra[index + 1]) {
+    if (tennisYears[index + 1]) {
       setTimeout(() => {
         this.calculTournamentWinners(masterWinners, master, index + 1);
       }, this.TIMEOUT);

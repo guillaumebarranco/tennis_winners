@@ -4,7 +4,7 @@ import { australianOpenWinners } from '../../data/slams/australian_open';
 import { rolandGarrosWinners } from '../../data/slams/roland_garros';
 import { usOpenWinners } from '../../data/slams/us_open';
 import { wimbledonWinners } from '../../data/slams/wimbledon';
-import { yearsSinceOpenEra } from '../../data/slams/years';
+import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { WinnersComponent } from '../../components/winners/winners.component';
 import { HeaderComponent } from '../../components/header/header.component';
@@ -51,7 +51,7 @@ export class SlamsOverTimeComponent implements OnInit {
     open: 'ao' | 'rg' | 'us' | 'wb',
     index = 0
   ) {
-    this._currentYear = yearsSinceOpenEra[index];
+    this._currentYear = tennisYears[index];
 
     const currentWinnerFound = this._currentWinners[open]
       .map(winner => winner.name)
@@ -85,7 +85,7 @@ export class SlamsOverTimeComponent implements OnInit {
       }
     }
 
-    if (yearsSinceOpenEra[index + 1]) {
+    if (tennisYears[index + 1]) {
       setTimeout(() => {
         this.calculTournamentWinners(openWinners, open, index + 1);
       }, this.TIMEOUT);

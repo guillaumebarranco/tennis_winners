@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { yearsSinceOpenEra } from '../../data/slams/years';
+import { tennisYears } from '../../data/years';
 import { TournamentFinal } from '../../models/slam-final';
 
 
@@ -14,7 +14,7 @@ export class TournamentsMixComponent {
   public tournamentsMixKeys = input.required<string[]>();
   public tournamentsMixLabels = input.required<string[]>();
   public onlyFrom2000 = input<boolean>(true);
-  public years = yearsSinceOpenEra;
+  public years = tennisYears;
 
   public tournamentsByYears = computed(() => {
     const data =  this.years.map(year => {
