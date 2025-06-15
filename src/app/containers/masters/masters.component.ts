@@ -9,7 +9,7 @@ import { monteCarloWinners } from '../../data/masters/monte_carlo';
 import { montrealWinners } from '../../data/masters/montreal';
 import { parisWinners } from '../../data/masters/paris';
 import { romeWinners } from '../../data/masters/rome';
-import { shangaiWinners } from '../../data/masters/shangai';
+import { shanghaiWinners } from '../../data/masters/shanghai';
 
 import { TournamentFinal } from '../../models/slam-final';
 import { TournamentsMixComponent } from '../../components/tournaments-mix/tournaments-mix.component';
@@ -30,7 +30,7 @@ export class MastersComponent {
   public montrealFinals: TournamentFinal[] = montrealWinners;
   public parisFinals: TournamentFinal[] = parisWinners;
   public romeFinals: TournamentFinal[] = romeWinners;
-  public shangaiFinals: TournamentFinal[] = shangaiWinners; 
+  public shanghaiFinals: TournamentFinal[] = shanghaiWinners; 
 
   public onlyFrom2000 = true;  
 
@@ -43,7 +43,7 @@ export class MastersComponent {
       ro: this.romeFinals,
       mr: this.montrealFinals,
       ci: this.cincinnatiFinals,
-      sh: this.shangaiFinals,
+      sh: this.shanghaiFinals,
       pa: this.parisFinals,
     }
   }
@@ -53,6 +53,6 @@ export class MastersComponent {
   }
 
   public getGrandsSlamsMixLabels() {
-    return ['Indian Wells', 'Miami', 'Monte-Carlo', 'Madrid', 'Rome', 'Montréal', 'Cincinnati', 'Shangai', 'Paris'];
+    return ['Indian Wells', 'Miami', 'Monte-Carlo', 'Madrid', 'Rome', 'Montréal', 'Cincinnati', 'shanghai', 'Paris'];
   }
 }

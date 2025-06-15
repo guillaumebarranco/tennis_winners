@@ -10,7 +10,7 @@ import { monteCarloWinners } from '../../data/masters/monte_carlo';
 import { montrealWinners } from '../../data/masters/montreal';
 import { parisWinners } from '../../data/masters/paris';
 import { romeWinners } from '../../data/masters/rome';
-import { shangaiWinners } from '../../data/masters/shangai';
+import { shanghaiWinners } from '../../data/masters/shanghai';
 import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -65,7 +65,7 @@ export class MastersOverTimeComponent implements OnInit {
     this.calculTournamentWinners(romeWinners, 'ro');
     this.calculTournamentWinners(montrealWinners, 'mo');
     this.calculTournamentWinners(cincinnatiWinners, 'ci');
-    this.calculTournamentWinners(shangaiWinners, 'sh');
+    this.calculTournamentWinners(shanghaiWinners, 'sh');
     this.calculTournamentWinners(parisWinners, 'pa');
   }
 
