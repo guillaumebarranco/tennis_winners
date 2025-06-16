@@ -25,15 +25,17 @@ export const getPlayerBackgroundColor = (player: string | undefined, isScore: bo
     return 'var(--color-player-default)';
   }
 
-  if (isScore) {
-    return 'var(--color-player-score)';
-  }
+ 
 
   const fullName = removeAccents(getPlayerFullName(player));
   const colorVar = `--color-player-${fullName}`;
   
   // Vérifie si la variable CSS existe
   if (getComputedStyle(document.documentElement).getPropertyValue(colorVar)) {
+    return `var(${colorVar})`;
+  }
+
+  if (isScore) {
     return `var(${colorVar})`;
   }
 
