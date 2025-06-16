@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute, RouterModule } from '@angular/router';
+import { ActivatedRoute,Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +9,9 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   imports: [RouterModule]
 })
 export class HeaderComponent {
-  public activeRoute = inject(ActivatedRoute);
+  public router = inject(Router);
   
   public isActive(currentRoute: string) : boolean {
-    const url: any = this.activeRoute.url;
-    return url.value[0].path === currentRoute;
+    return this.router.url === currentRoute;
   }
 }

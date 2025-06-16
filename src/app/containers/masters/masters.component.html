@@ -1,5 +1,3 @@
-<app-header></app-header>
-
 <div>
   <label>Afficher uniquement post 2000</label>
   <input type="checkbox" [checked]="onlyFrom2000" (change)="onlyFrom2000 = !onlyFrom2000"/>
@@ -7,14 +5,14 @@
 
 <details open="true">
   <summary>Mix Masters 1000</summary>
-  <div class="slams">
+  <div class="masters">
     <app-tournaments-mix [onlyFrom2000]="onlyFrom2000" tournamentsMixName="Mix Masters 1000" [tournamentsMixKeys]="getGrandsSlamsMixKeys()" [tournamentsMixLabels]="getGrandsSlamsMixLabels()" [tournamentsMixFinals]="getGrandsSlamsMixTournaments()"></app-tournaments-mix>
   </div>
 </details>
 
 <details open="true">
   <summary>Finales de Masters 1000</summary>
-  <div class="slams">
+  <div class="masters">
     <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Indian Wells" [tournamentFinals]="indianWellsFinals"></app-tournament>
     <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Miami" [tournamentFinals]="miamiFinals"></app-tournament>
     <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Monte-Carlo" [tournamentFinals]="monteCarloFinals"></app-tournament>

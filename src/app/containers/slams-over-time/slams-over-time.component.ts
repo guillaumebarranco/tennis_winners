@@ -7,7 +7,6 @@ import { wimbledonWinners } from '../../data/slams/wimbledon';
 import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { WinnersComponent } from '../../components/winners/winners.component';
-import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   animations: [
@@ -20,7 +19,7 @@ import { HeaderComponent } from '../../components/header/header.component';
   ],
   selector: 'app-slams-over-time',
   templateUrl: './slams-over-time.component.html',
-  imports: [WinnersComponent, HeaderComponent]
+  imports: [WinnersComponent]
 })
 export class SlamsOverTimeComponent implements OnInit {
   public readonly MAX_WINNERS = 10;

@@ -4,39 +4,41 @@ export const isFiveSetsMatch = (score: string[]): boolean => {
 
 export const getPlayerBackgroundColor = (player: string | undefined, isScore: boolean = false, score?: string[]): string => {
   if (!player) {
-    return 'transparent';
+    return 'var(--color-player-default)';
   }
 
   // Si c'est un score et que ce n'est pas un match en 5 sets, on retourne transparent
   if (isScore && (!score || !isFiveSetsMatch(score))) {
-    return 'transparent';
+    return 'var(--color-player-default)';
   }
 
   if (player.includes('Federer')) {
-    return 'greenyellow';
+    return 'var(--color-player-federer)';
   } else if (player.includes('Nadal')) {
-    return 'orange';
+    return 'var(--color-player-nadal)';
   } else if (player.includes('Djokovic')) {
-    return 'red';
+    return 'var(--color-player-djokovic)';
   } else if (player.includes('Murray')) {
-    return 'deepskyblue';
+    return 'var(--color-player-murray)';
   } else if (player.includes('Björn')) {
-    return 'yellow';
+    return 'var(--color-player-borg)';
   } else if (player.includes('Sampras')) {
-    return 'cadetblue';
+    return 'var(--color-player-sampras)';
   } else if (player.includes('Agassi')) {
-    return 'mediumpurple';
+    return 'var(--color-player-agassi)';
   } else if (player.includes('Lendl')) {
-    return 'lightskyblue';
+    return 'var(--color-player-lendl)';
   } else if (player.includes('Connors')) {
-    return 'antiquewhite';
+    return 'var(--color-player-connors)';
   } else if (player.includes('McEnroe')) {
-    return 'lightgray';
+    return 'var(--color-player-mcenroe)';
   } else if (player.includes('Wilander')) {
-    return 'pink';
+    return 'var(--color-player-wilander)';
+  } else if (player.includes('Alcaraz')) {
+    return 'var(--color-player-alcaraz)';
   } else if (isScore) {
-    return 'beige';
+    return 'var(--color-player-score)';
   } else {
-    return 'transparent';
+    return 'var(--color-player-default)';
   }
-}; 
+};

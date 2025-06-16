@@ -6,13 +6,12 @@ import { wimbledonWinners } from '../../data/slams/wimbledon';
 import { usOpenWinners } from '../../data/slams/us_open';
 import { TournamentFinal } from '../../models/slam-final';
 import { TournamentsMixComponent } from '../../components/tournaments-mix/tournaments-mix.component';
-import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-slams',
   styleUrls: ['./slams.component.scss'],
   templateUrl: './slams.component.html',
-  imports: [TournamentComponent, TournamentsMixComponent, HeaderComponent]
+  imports: [TournamentComponent, TournamentsMixComponent]
 })
 export class SlamsComponent {
   public australianOpenFinals: TournamentFinal[] = australianOpenWinners;

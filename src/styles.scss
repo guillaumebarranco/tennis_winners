@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    // Couleurs des joueurs pour le background
+    --color-player-federer: greenyellow;
+    --color-player-nadal: orange;
+    --color-player-djokovic: red;
+    --color-player-murray: deepskyblue;
+    --color-player-borg: yellow;
+    --color-player-sampras: cadetblue;
+    --color-player-agassi: mediumpurple;
+    --color-player-lendl: lightskyblue;
+    --color-player-connors: antiquewhite;
+    --color-player-mcenroe: lightgray;
+    --color-player-wilander: pink;
+    --color-player-alcaraz: brown;
+    --color-player-score: beige;
+    --color-player-default: transparent;
+}

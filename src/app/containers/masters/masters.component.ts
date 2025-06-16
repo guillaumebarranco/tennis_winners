@@ -13,13 +13,12 @@ import { shanghaiWinners } from '../../data/masters/shanghai';
 
 import { TournamentFinal } from '../../models/slam-final';
 import { TournamentsMixComponent } from '../../components/tournaments-mix/tournaments-mix.component';
-import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-masters',
   styleUrls: ['./masters.component.scss'],
   templateUrl: './masters.component.html',
-  imports: [TournamentComponent, TournamentsMixComponent, HeaderComponent]
+  imports: [TournamentComponent, TournamentsMixComponent]
 })
 export class MastersComponent {
   public cincinnatiFinals: TournamentFinal[] = cincinnatiWinners;

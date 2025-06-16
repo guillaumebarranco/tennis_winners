@@ -14,7 +14,6 @@ import { shanghaiWinners } from '../../data/masters/shanghai';
 import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   animations: [
@@ -27,7 +26,7 @@ import { HeaderComponent } from '../../components/header/header.component';
   ],
   selector: 'app-masters-over-time',
   templateUrl: './masters-over-time.component.html',
-  imports: [WinnersComponent, HeaderComponent]
+  imports: [WinnersComponent]
 })
 export class MastersOverTimeComponent implements OnInit {
   public readonly MAX_WINNERS = 10;

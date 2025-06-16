@@ -37,13 +37,8 @@ li {
   border-bottom: 3px solid transparent;
   transition: all 0.3s ease;
 
-  &:hover {
-    color: black;
-  }
-
   &.active-link {
     background-color: #34495e;
-    border-bottom: 3px solid #3498db;
-    color: black;
+    border-bottom: 6px solid #3498db;
   }
 }
