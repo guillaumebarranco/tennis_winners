@@ -1,4 +1,4 @@
-export const parisWinners = [
+export const atpParisWinners = [
   {year:1968, winner:'Ken Rosewall', finalist: 'Rod Laver', score: ['6-3', '6-1', '2-6', '6-2']},
   {year:1969, winner:'Tom Okker', finalist: 'Butch Buchholz', score: ['8-6', '6-2', '6-1']},
   {year:1970, winner:'Arthur Ashe', finalist: 'Marty Riessen', score: ['7-6', '6-4', '6-3']},

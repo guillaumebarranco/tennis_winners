@@ -1,4 +1,4 @@
-export const indianWellsWinners = [
+export const atpIndianWellsWinners = [
   {year:1968, winner:'', finalist: '', score: ['', '', '']},
   {year:1969, winner:'', finalist: '', score: ['', '', '']},
   {year:1970, winner:'', finalist: '', score: ['', '', '']},

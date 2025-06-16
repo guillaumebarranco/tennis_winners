@@ -1,4 +1,4 @@
-export const montrealWinners = [
+export const atpMontrealWinners = [
   {year:1968, winner:'Ramanathan Krishnan', finalist: 'Torben Ulrich', score: ['6-3', '6-0', '7-5']},
   {year:1969, winner:'Cliff Richey', finalist: 'Earl Butch Buchholz', score: ['6-4', '5-7', '6-4', '6-0']},
   {year:1970, winner:'Rod Laver', finalist: 'Roger Taylor', score: ['6-0', '4-6', '6-3']},

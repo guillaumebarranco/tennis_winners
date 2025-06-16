@@ -11,6 +11,10 @@ const getPlayerLastName = (fullName: string): string => {
   return parts[parts.length - 1].toLowerCase();
 };
 
+const getPlayerFullName = (fullName: string): string => {
+  return fullName.toLowerCase().replace(/\s+/g, '_');
+};
+
 export const getPlayerBackgroundColor = (player: string | undefined, isScore: boolean = false, score?: string[]): string => {
   if (!player) {
     return 'var(--color-player-default)';
@@ -25,8 +29,8 @@ export const getPlayerBackgroundColor = (player: string | undefined, isScore: bo
     return 'var(--color-player-score)';
   }
 
-  const lastName = removeAccents(getPlayerLastName(player));
-  const colorVar = `--color-player-${lastName}`;
+  const fullName = removeAccents(getPlayerFullName(player));
+  const colorVar = `--color-player-${fullName}`;
   
   // Vérifie si la variable CSS existe
   if (getComputedStyle(document.documentElement).getPropertyValue(colorVar)) {

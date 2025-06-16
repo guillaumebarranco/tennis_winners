@@ -1,4 +1,4 @@
-export const miamiWinners = [
+export const atpMiamiWinners = [
   {year:1970, winner:'Ken Rosewall', finalist: 'Andrés Gimeno', score: ['6-2', '7-6']},
   {year:1971, winner:'Cliff Drysdale', finalist: 'Rod Laver', score: ['6-2', '6-4']},
   {year:1972, winner:'Ken Rosewall', finalist: 'Cliff Drysdale', score: ['3-6', '6-2', '6-4']},

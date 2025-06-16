@@ -18,6 +18,9 @@ export class TournamentsMixComponent {
 
   public tournamentsByYears = computed(() => {
     const data =  this.years.map(year => {
+      console.log('year', year);
+      console.log('tournamentsMixKeys', this.tournamentsMixKeys());
+      console.log('tournamentsMixFinals', this.tournamentsMixFinals());
       return {
         year,
         finals: this.tournamentsMixKeys().map(key => {

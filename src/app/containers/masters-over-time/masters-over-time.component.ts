@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { WinnersComponent } from '../../components/winners/winners.component';
-import { cincinnatiWinners } from '../../data/atp/masters/cincinnati';
-import { indianWellsWinners } from '../../data/atp/masters/indian_wells';
-import { madridWinners } from '../../data/atp/masters/madrid';
-import { miamiWinners } from '../../data/atp/masters/miami';
-import { monteCarloWinners } from '../../data/atp/masters/monte_carlo';
-import { montrealWinners } from '../../data/atp/masters/montreal';
-import { parisWinners } from '../../data/atp/masters/paris';
-import { romeWinners } from '../../data/atp/masters/rome';
-import { shanghaiWinners } from '../../data/atp/masters/shanghai';
+import { atpCincinnatiWinners } from '../../data/atp/masters/cincinnati';
+import { atpIndianWellsWinners } from '../../data/atp/masters/indian_wells';
+import { atpMadridWinners } from '../../data/atp/masters/madrid';
+import { atpMiamiWinners } from '../../data/atp/masters/miami';
+import { atpMonteCarloWinners } from '../../data/atp/masters/monte_carlo';
+import { atpMontrealWinners } from '../../data/atp/masters/montreal';
+import { atpParisWinners } from '../../data/atp/masters/paris';
+import { atpRomeWinners } from '../../data/atp/masters/rome';
+import { atpShanghaiWinners } from '../../data/atp/masters/shanghai';
 import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { trigger, transition, style, animate } from '@angular/animations';
@@ -57,15 +57,15 @@ export class MastersOverTimeComponent implements OnInit {
 
   public ngOnInit(): void {
 
-    this.calculTournamentWinners(indianWellsWinners, 'in');
-    this.calculTournamentWinners(miamiWinners, 'mi');
-    this.calculTournamentWinners(monteCarloWinners, 'mc');
-    this.calculTournamentWinners(madridWinners, 'ma');
-    this.calculTournamentWinners(romeWinners, 'ro');
-    this.calculTournamentWinners(montrealWinners, 'mo');
-    this.calculTournamentWinners(cincinnatiWinners, 'ci');
-    this.calculTournamentWinners(shanghaiWinners, 'sh');
-    this.calculTournamentWinners(parisWinners, 'pa');
+    this.calculTournamentWinners(atpIndianWellsWinners, 'in');
+    this.calculTournamentWinners(atpMiamiWinners, 'mi');
+    this.calculTournamentWinners(atpMonteCarloWinners, 'mc');
+    this.calculTournamentWinners(atpMadridWinners, 'ma');
+    this.calculTournamentWinners(atpRomeWinners, 'ro');
+    this.calculTournamentWinners(atpMontrealWinners, 'mo');
+    this.calculTournamentWinners(atpCincinnatiWinners, 'ci');
+    this.calculTournamentWinners(atpShanghaiWinners, 'sh');
+    this.calculTournamentWinners(atpParisWinners, 'pa');
   }
 
   public calculTournamentWinners(

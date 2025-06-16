@@ -1,4 +1,4 @@
-export const romeWinners = [
+export const atpRomeWinners = [
   {year:1968, winner:'Tom Okker', finalist: 'Bob Hewitt', score: ['10-8', '6-8', '6-1', '1-6', '6-0']},
   {year:1969, winner:'John Newcombe', finalist: 'Tony Roche', score: ['6-3', '4-6', '6-2', '5-7', '6-3']},
   {year:1970, winner:'Ilie Năstase', finalist: 'Jan Kodeš', score: ['6-3', '1-6', '6-3', '8-6']},

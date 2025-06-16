@@ -1,4 +1,4 @@
-export const shanghaiWinners = [
+export const atpShanghaiWinners = [
   {year:1968, winner:'', finalist: '', score: ['', '', '']},
   {year:1969, winner:'', finalist: '', score: ['', '', '']},
   {year:1970, winner:'', finalist: '', score: ['', '', '']},

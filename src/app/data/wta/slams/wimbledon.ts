@@ -51,7 +51,7 @@ export const wtaWimbledonWinners = [
   {year:2017, winner:'Garbiñe Muguruza', finalist: 'Venus Williams', score: ['7-5', '6-0']},
   {year:2018, winner:'Angelique Kerber', finalist: 'Serena Williams', score: ['6-3', '6-3']},
   {year:2019, winner:'Simona Halep', finalist: 'Serena Williams', score: ['6-2', '6-2']},
-  {year:2020, winner:'Tournoi annulé', finalist: 'Tournoi annulé', score: ['']},
+  {year:2020, winner:'', finalist: '', score: ['']},
   {year:2021, winner:'Ashleigh Barty', finalist: 'Karolína Plíšková', score: ['6-3', '6-7', '6-3']},
   {year:2022, winner:'Elena Rybakina', finalist: 'Ons Jabeur', score: ['3-6', '6-2', '6-2']},
   {year:2023, winner:'Markéta Vondroušová', finalist: 'Ons Jabeur', score: ['6-4', '6-4']},

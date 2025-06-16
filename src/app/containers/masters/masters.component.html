@@ -1,26 +1,52 @@
 <div>
   <label>Afficher uniquement post 2000</label>
-  <input type="checkbox" [checked]="onlyFrom2000" (change)="onlyFrom2000 = !onlyFrom2000"/>
+  <input type="checkbox" [checked]="onlyFrom2000()" (change)="onlyFrom2000.set(!onlyFrom2000())"/>
+</div>
+
+<div>
+  <label>Afficher le circuit ATP</label>
+  <input type="checkbox" [checked]="showAtp()" (change)="showAtp.set(!showAtp())"/>
 </div>
 
 <details open="true">
-  <summary>Mix Masters 1000</summary>
-  <div class="masters">
-    <app-tournaments-mix [onlyFrom2000]="onlyFrom2000" tournamentsMixName="Mix Masters 1000" [tournamentsMixKeys]="getGrandsSlamsMixKeys()" [tournamentsMixLabels]="getGrandsSlamsMixLabels()" [tournamentsMixFinals]="getGrandsSlamsMixTournaments()"></app-tournaments-mix>
-  </div>
+  @if(showAtp()) {
+    <summary>Mix Masters 1000</summary>
+    <div class="masters">
+      <app-tournaments-mix [onlyFrom2000]="onlyFrom2000()" tournamentsMixName="Mix Masters 1000" [tournamentsMixKeys]="getAtpMastersMixKeys()" [tournamentsMixLabels]="getAtpMastersMixLabels()" [tournamentsMixFinals]="getAtpMastersMixTournaments()"></app-tournaments-mix>
+    </div>
+  } @else {
+    <summary>Mix WTA 1000</summary>
+    <div class="masters">
+      <app-tournaments-mix [onlyFrom2000]="onlyFrom2000()" tournamentsMixName="Mix Wta 1000" [tournamentsMixKeys]="getWtaMastersMixKeys()" [tournamentsMixLabels]="getWtaMastersMixLabels()" [tournamentsMixFinals]="getWtaMastersMixTournaments()"></app-tournaments-mix>
+    </div>
+  }
 </details>
 
 <details open="true">
   <summary>Finales de Masters 1000</summary>
-  <div class="masters">
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Indian Wells" [tournamentFinals]="indianWellsFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Miami" [tournamentFinals]="miamiFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Monte-Carlo" [tournamentFinals]="monteCarloFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Madrid" [tournamentFinals]="madridFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Rome" [tournamentFinals]="romeFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Montréal" [tournamentFinals]="montrealFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Cincinnati" [tournamentFinals]="cincinnatiFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Shanghai" [tournamentFinals]="shanghaiFinals"></app-tournament>
-    <app-tournament [onlyFrom2000]="onlyFrom2000" tournamentName="Paris" [tournamentFinals]="parisFinals"></app-tournament>
-  </div>
+  @if(showAtp()) {
+    <div class="masters">
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Indian Wells" [tournamentFinals]="atpIndianWellsFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Miami" [tournamentFinals]="atpMiamiFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Monte-Carlo" [tournamentFinals]="atpMonteCarloFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Madrid" [tournamentFinals]="atpMadridFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Rome" [tournamentFinals]="atpRomeFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Montréal" [tournamentFinals]="atpMontrealFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Cincinnati" [tournamentFinals]="atpCincinnatiFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Shanghai" [tournamentFinals]="atpShanghaiFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Paris" [tournamentFinals]="atpParisFinals()"></app-tournament>
+    </div>
+  } @else {
+    <div class="masters">
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Indian Wells" [tournamentFinals]="atpIndianWellsFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Miami" [tournamentFinals]="wtaMiamiFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Dubai" [tournamentFinals]="wtaDubaiFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Madrid" [tournamentFinals]="wtaMadridFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Rome" [tournamentFinals]="wtaRomeFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Canada" [tournamentFinals]="wtaCanadaFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Cincinnati" [tournamentFinals]="wtaCincinnatiFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Pékin" [tournamentFinals]="wtaBeijingFinals()"></app-tournament>
+      <app-tournament [onlyFrom2000]="onlyFrom2000()" tournamentName="Doha" [tournamentFinals]="wtaDohaFinals()"></app-tournament>
+    </div>
+  }
 </details>

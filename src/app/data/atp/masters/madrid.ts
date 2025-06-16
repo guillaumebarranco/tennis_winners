@@ -1,4 +1,4 @@
-export const madridWinners = [
+export const atpMadridWinners = [
   {year:1968, winner:'John Newcombe', finalist: 'Cliff Drysdale', score: ['', '', '']},
   {year:1969, winner:'Tony Roche', finalist: 'Tom Okker', score: ['', '', '']},
   {year:1970, winner:'Tom Okker', finalist: 'Ilie Năstase', score: ['', '', '']},

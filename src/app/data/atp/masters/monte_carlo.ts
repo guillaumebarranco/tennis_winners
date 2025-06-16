@@ -1,4 +1,4 @@
-export const monteCarloWinners = [
+export const atpMonteCarloWinners = [
   {year:1968, winner:'Rafael Osuna', finalist: 'Nicola Pietrangeli', score: ['6-3', '6-3', '6-3']},
   {year:1969, winner:'Tom Okker', finalist: 'John Newcombe', score: ['8-10', '6-1', '7-5', '6-3']},
   {year:1970, winner:'Željko Franulović', finalist: 'Manuel Orantes', score: ['6-4', '6-3', '6-3']},

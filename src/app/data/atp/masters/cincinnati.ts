@@ -1,4 +1,4 @@
-export const cincinnatiWinners = [
+export const atpCincinnatiWinners = [
   {year:1968, winner:'William Harris', finalist: 'Tom Edlefsen', score: ['3-6', '6-2', '6-2']},
   {year:1969, winner:'Cliff Richey', finalist: 'Allan Stone', score: ['6-1', '6-2']},
   {year:1970, winner:'Ken Rosewall', finalist: 'Cliff Richey', score: ['7-9', '9-7', '8-6']},
