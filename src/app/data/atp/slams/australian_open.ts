@@ -1,4 +1,4 @@
-export const australianOpenWinners = [
+export const atpAustralianOpenWinners = [
   {year: 1968, winner: 'William Bowrey', finalist: 'Juan Gisbert', score: ['7-5', '2-6', '9-7', '6-4']},
   {year: 1969, winner: 'Rod Laver', finalist: 'Andrés Gimeno', score: ['6-3', '6-4', '7-5']},
   {year: 1970, winner: 'Arthur Ashe', finalist: 'Dick Crealy', score: ['6-4', '9-7', '6-2']},

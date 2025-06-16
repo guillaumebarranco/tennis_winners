@@ -1,9 +1,9 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { australianOpenWinners } from '../../data/slams/australian_open';
-import { rolandGarrosWinners } from '../../data/slams/roland_garros';
-import { usOpenWinners } from '../../data/slams/us_open';
-import { wimbledonWinners } from '../../data/slams/wimbledon';
+import { atpAustralianOpenWinners } from '../../data/atp/slams/australian_open';
+import { atpRolandGarrosWinners } from '../../data/atp/slams/roland_garros';
+import { atpUsOpenWinners } from '../../data/atp/slams/us_open';
+import { atpWimbledonWinners } from '../../data/atp/slams/wimbledon';
 import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { WinnersComponent } from '../../components/winners/winners.component';
@@ -39,10 +39,10 @@ export class SlamsOverTimeComponent implements OnInit {
 
   public ngOnInit(): void {
 
-    this.calculTournamentWinners(australianOpenWinners, 'ao');
-    this.calculTournamentWinners(rolandGarrosWinners, 'rg');
-    this.calculTournamentWinners(wimbledonWinners, 'wb');
-    this.calculTournamentWinners(usOpenWinners, 'us');
+    this.calculTournamentWinners(atpAustralianOpenWinners, 'ao');
+    this.calculTournamentWinners(atpRolandGarrosWinners, 'rg');
+    this.calculTournamentWinners(atpWimbledonWinners, 'wb');
+    this.calculTournamentWinners(atpUsOpenWinners, 'us');
   }
 
   public calculTournamentWinners(

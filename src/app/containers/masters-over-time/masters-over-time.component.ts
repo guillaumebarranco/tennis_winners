@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 
 
 import { WinnersComponent } from '../../components/winners/winners.component';
-import { cincinnatiWinners } from '../../data/masters/cincinnati';
-import { indianWellsWinners } from '../../data/masters/indian_wells';
-import { madridWinners } from '../../data/masters/madrid';
-import { miamiWinners } from '../../data/masters/miami';
-import { monteCarloWinners } from '../../data/masters/monte_carlo';
-import { montrealWinners } from '../../data/masters/montreal';
-import { parisWinners } from '../../data/masters/paris';
-import { romeWinners } from '../../data/masters/rome';
-import { shanghaiWinners } from '../../data/masters/shanghai';
+import { cincinnatiWinners } from '../../data/atp/masters/cincinnati';
+import { indianWellsWinners } from '../../data/atp/masters/indian_wells';
+import { madridWinners } from '../../data/atp/masters/madrid';
+import { miamiWinners } from '../../data/atp/masters/miami';
+import { monteCarloWinners } from '../../data/atp/masters/monte_carlo';
+import { montrealWinners } from '../../data/atp/masters/montreal';
+import { parisWinners } from '../../data/atp/masters/paris';
+import { romeWinners } from '../../data/atp/masters/rome';
+import { shanghaiWinners } from '../../data/atp/masters/shanghai';
 import { tennisYears } from '../../data/years';
 import { Winner } from '../../models/winner';
 import { trigger, transition, style, animate } from '@angular/animations';

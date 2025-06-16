@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { TournamentComponent } from '../../components/tournament/tournament.component';
 
-import { cincinnatiWinners } from '../../data/masters/cincinnati';
-import { indianWellsWinners } from '../../data/masters/indian_wells';
-import { madridWinners } from '../../data/masters/madrid';
-import { miamiWinners } from '../../data/masters/miami';
-import { monteCarloWinners } from '../../data/masters/monte_carlo';
-import { montrealWinners } from '../../data/masters/montreal';
-import { parisWinners } from '../../data/masters/paris';
-import { romeWinners } from '../../data/masters/rome';
-import { shanghaiWinners } from '../../data/masters/shanghai';
+import { cincinnatiWinners } from '../../data/atp/masters/cincinnati';
+import { indianWellsWinners } from '../../data/atp/masters/indian_wells';
+import { madridWinners } from '../../data/atp/masters/madrid';
+import { miamiWinners } from '../../data/atp/masters/miami';
+import { monteCarloWinners } from '../../data/atp/masters/monte_carlo';
+import { montrealWinners } from '../../data/atp/masters/montreal';
+import { parisWinners } from '../../data/atp/masters/paris';
+import { romeWinners } from '../../data/atp/masters/rome';
+import { shanghaiWinners } from '../../data/atp/masters/shanghai';
 
 import { TournamentFinal } from '../../models/slam-final';
 import { TournamentsMixComponent } from '../../components/tournaments-mix/tournaments-mix.component';
@@ -52,6 +52,6 @@ export class MastersComponent {
   }
 
   public getGrandsSlamsMixLabels() {
-    return ['Indian Wells', 'Miami', 'Monte-Carlo', 'Madrid', 'Rome', 'Montréal', 'Cincinnati', 'shanghai', 'Paris'];
+    return ['Indian Wells', 'Miami', 'Monte-Carlo', 'Madrid', 'Rome', 'Montréal', 'Cincinnati', 'Shanghai', 'Paris'];
   }
 }

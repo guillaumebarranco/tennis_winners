@@ -1,4 +1,4 @@
-export const wimbledonWinners = [
+export const atpWimbledonWinners = [
   {year: 1968, winner: 'Rod Laver', finalist: 'Tony Roche', score: ['6-3', '6-4', '6-2']},
   {year: 1969, winner: 'Rod Laver', finalist: 'John Newcombe', score: ['6-4', '5-7', '6-4', '6-4']},
   {year: 1970, winner: 'John Newcombe', finalist: 'Ken Rosewall', score: ['5-7', '6-3', '6-2', '3-6', '6-1']},

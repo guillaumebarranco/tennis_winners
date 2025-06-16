@@ -2,6 +2,15 @@ export const isFiveSetsMatch = (score: string[]): boolean => {
   return score.length === 5;
 };
 
+const removeAccents = (str: string): string => {
+  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+};
+
+const getPlayerLastName = (fullName: string): string => {
+  const parts = fullName.split(' ');
+  return parts[parts.length - 1].toLowerCase();
+};
+
 export const getPlayerBackgroundColor = (player: string | undefined, isScore: boolean = false, score?: string[]): string => {
   if (!player) {
     return 'var(--color-player-default)';
@@ -12,33 +21,17 @@ export const getPlayerBackgroundColor = (player: string | undefined, isScore: bo
     return 'var(--color-player-default)';
   }
 
-  if (player.includes('Federer')) {
-    return 'var(--color-player-federer)';
-  } else if (player.includes('Nadal')) {
-    return 'var(--color-player-nadal)';
-  } else if (player.includes('Djokovic')) {
-    return 'var(--color-player-djokovic)';
-  } else if (player.includes('Murray')) {
-    return 'var(--color-player-murray)';
-  } else if (player.includes('Björn')) {
-    return 'var(--color-player-borg)';
-  } else if (player.includes('Sampras')) {
-    return 'var(--color-player-sampras)';
-  } else if (player.includes('Agassi')) {
-    return 'var(--color-player-agassi)';
-  } else if (player.includes('Lendl')) {
-    return 'var(--color-player-lendl)';
-  } else if (player.includes('Connors')) {
-    return 'var(--color-player-connors)';
-  } else if (player.includes('McEnroe')) {
-    return 'var(--color-player-mcenroe)';
-  } else if (player.includes('Wilander')) {
-    return 'var(--color-player-wilander)';
-  } else if (player.includes('Alcaraz')) {
-    return 'var(--color-player-alcaraz)';
-  } else if (isScore) {
+  if (isScore) {
     return 'var(--color-player-score)';
-  } else {
-    return 'var(--color-player-default)';
   }
+
+  const lastName = removeAccents(getPlayerLastName(player));
+  const colorVar = `--color-player-${lastName}`;
+  
+  // Vérifie si la variable CSS existe
+  if (getComputedStyle(document.documentElement).getPropertyValue(colorVar)) {
+    return `var(${colorVar})`;
+  }
+
+  return 'var(--color-player-default)';
 };

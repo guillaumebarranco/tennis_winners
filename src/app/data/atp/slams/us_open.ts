@@ -1,4 +1,4 @@
-export const usOpenWinners = [
+export const atpUsOpenWinners = [
   {year: 1968, winner: 'Arthur Ashe', finalist: 'Tom Okker', score: ['14-12', '5-7', '6-3', '3-6', '6-3']},
   {year: 1969, winner: 'Rod Laver', finalist: 'Tony Roche', score: ['7-9', '6-1', '6-2', '6-2']},
   {year: 1970, winner: 'Ken Rosewall', finalist: 'Tony Roche', score: ['2-6', '6-4', '7-6', '6-3']},

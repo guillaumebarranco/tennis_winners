@@ -1,7 +1,7 @@
-import { australianOpenWinners } from '../data/slams/australian_open';
-import { rolandGarrosWinners } from '../data/slams/roland_garros';
-import { usOpenWinners } from '../data/slams/us_open';
-import { wimbledonWinners } from '../data/slams/wimbledon';
+import { atpAustralianOpenWinners } from '../data/atp/slams/australian_open';
+import { atpRolandGarrosWinners } from '../data/atp/slams/roland_garros';
+import { atpUsOpenWinners } from '../data/atp/slams/us_open';
+import { atpWimbledonWinners } from '../data/atp/slams/wimbledon';
 
 interface PlayerStats {
   name: string;
@@ -14,7 +14,7 @@ export function calculateGrandSlamFinalRatios(): PlayerStats[] {
   const playerStats = new Map<string, { wins: number; finals: number }>();
 
   // Fonction pour traiter les finales d'un tournoi
-  const processTournament = (tournament: typeof australianOpenWinners) => {
+  const processTournament = (tournament: typeof atpAustralianOpenWinners) => {
     tournament.forEach(match => {
       if (match.winner && match.finalist) {
         // Traiter le vainqueur
@@ -32,10 +32,10 @@ export function calculateGrandSlamFinalRatios(): PlayerStats[] {
   };
 
   // Traiter tous les tournois
-  processTournament(australianOpenWinners);
-  processTournament(rolandGarrosWinners);
-  processTournament(wimbledonWinners);
-  processTournament(usOpenWinners);
+  processTournament(atpAustralianOpenWinners);
+  processTournament(atpRolandGarrosWinners);
+  processTournament(atpWimbledonWinners);
+  processTournament(atpUsOpenWinners);
 
   console.log(playerStats);
 

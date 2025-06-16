@@ -1,4 +1,4 @@
-export const rolandGarrosWinners = [
+export const atpRolandGarrosWinners = [
   {year:1968, winner:'Ken Rosewall', finalist: 'Rod Laver', score: ['6-3', '6-1', '2-6', '6-2']},
   {year:1969, winner:'Rod Laver', finalist: 'Ken Rosewall', score: ['6-4', '6-3', '6-4']},
   {year:1970, winner:'Jan Kodeš', finalist: 'Željko Franulović', score: ['6-2', '6-4', '6-0']},
