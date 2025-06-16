@@ -1,12 +1,19 @@
-<div>
-  <label>Afficher uniquement post 2000</label>
-  <input type="checkbox" [checked]="onlyFrom2000()" (change)="onlyFrom2000.set(!onlyFrom2000())"/>
+<div class="preferences">
+  <div>
+    <label>Afficher uniquement post 2000</label>
+    <input type="checkbox" [checked]="onlyFrom2000()" (change)="onlyFrom2000.set(!onlyFrom2000())"/>
+  </div>
+  
+  <div>
+    @if(showAtp()) {
+      <button (click)="showAtp.set(!showAtp())">Afficher le circuit WTA</button>
+    } @else {
+      <button (click)="showAtp.set(!showAtp())">Afficher le circuit ATP</button>
+    }
+  </div>
 </div>
 
-<div>
-  <label>Afficher le circuit ATP</label>
-  <input type="checkbox" [checked]="showAtp()" (change)="showAtp.set(!showAtp())"/>
-</div>
+
 
 <details open="true">
   @if(showAtp()) {

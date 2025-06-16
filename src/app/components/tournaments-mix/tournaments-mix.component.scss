@@ -1,16 +1,75 @@
+h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
 table {
-  font-size: 14px;
-}
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid gray;
 
-thead th {
-  border: solid 1px black;
-}
+  thead {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid gray;
 
-tbody tr {
+    th {
+      padding: 0.6rem 0.8rem;
+      text-align: left;
+      font-weight: 600;
+      color: #495057;
+      white-space: nowrap;
+      border: 1px solid gray;
 
-  td {
-    border: solid 1px black;
-    padding: 4px;
-    text-align: center;
+      &:first-child {
+        padding-left: 1rem;
+      }
+
+      &:last-child {
+        padding-right: 1rem;
+      }
+    }
   }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid gray;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #f8f9fa;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      td {
+        padding: 0.5rem 0.8rem;
+        color: #212529;
+        font-size: 0.95rem;
+        border: 1px solid gray;
+
+        &:first-child {
+          padding-left: 1rem;
+          font-weight: 500;
+        }
+
+        &:last-child {
+          padding-right: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.winner {
+  // font-weight: 600;
+  color: #1a1a1a;
 }
